@@ -9,7 +9,7 @@
   {% for pet in pets %}
   <div>
     <img class="img-thumbnail" src="{{ pet.image_url() }}">
-    <a href="/edit_pet, pet_id=pet.id">{{ pet.name }}</a>
+    <a href="/edit_pet/<int:pet_id>">{{ pet.name }}</a>
     {% if pet.available %} <b> is available!</b> {% endif %}
   </div>
   {% else %}
@@ -19,3 +19,5 @@
 </div>
 
 <a href="/add">Add a Pet</a>
+
+{% endblock %}
